@@ -64,6 +64,14 @@ def search_manual(fault):
     fault_key = aliases.get(fault_key, fault_key)
 
     if fault_key not in MAINTENANCE_MANUAL:
+        if any(word in fault_key for word in ("overheat", "hot", "temperature", "cooling")):
+            fault_key = "overheating"
+        elif any(word in fault_key for word in ("vibration", "shaking")):
+            fault_key = "excessive_vibration"
+        elif any(word in fault_key for word in ("normal", "healthy", "no_fault", "no_issue")):
+            fault_key = "normal"
+
+    if fault_key not in MAINTENANCE_MANUAL:
         return {
             "success": False,
             "fault": fault,
