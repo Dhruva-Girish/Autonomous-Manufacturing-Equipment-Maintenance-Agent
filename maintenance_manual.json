@@ -1,0 +1,51 @@
+{
+    "normal": {
+        "title": "Normal Motor Operation",
+        "symptoms": [
+            "Temperature, vibration, and current are within normal limits."
+        ],
+        "possible_causes": [],
+        "recommended_actions": [
+            "Continue normal operation.",
+            "Continue routine preventive maintenance."
+        ],
+        "severity": "low",
+        "requires_technician": false
+    },
+    "overheating": {
+        "title": "Motor Overheating",
+        "symptoms": [
+            "Motor temperature exceeds the configured safe threshold."
+        ],
+        "possible_causes": [
+            "Insufficient ventilation",
+            "Excessive mechanical load",
+            "Cooling system obstruction"
+        ],
+        "recommended_actions": [
+            "Inspect ventilation openings and cooling arrangements.",
+            "Check whether the motor is operating under excessive load.",
+            "Request technician inspection if overheating persists."
+        ],
+        "severity": "high",
+        "requires_technician": true
+    },
+    "excessive_vibration": {
+        "title": "Excessive Motor Vibration",
+        "symptoms": [
+            "Motor vibration exceeds the configured normal threshold."
+        ],
+        "possible_causes": [
+            "Mechanical misalignment",
+            "Worn bearings",
+            "Loose mounting or fasteners"
+        ],
+        "recommended_actions": [
+            "Inspect mounting and fasteners after the equipment is safely stopped.",
+            "Request a technician to inspect alignment and bearings.",
+            "Do not resume operation until required safety checks are complete."
+        ],
+        "severity": "high",
+        "requires_technician": true
+    }
+}
