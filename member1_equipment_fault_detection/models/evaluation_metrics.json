@@ -1,0 +1,74 @@
+{
+  "dataset": "equipment_fault_data.csv",
+  "dataset_type": "synthetic demonstration data",
+  "total_rows": 6600,
+  "train_rows": 5280,
+  "test_rows": 1320,
+  "features": [
+    "temperature_c",
+    "vibration_mm_s",
+    "current_a"
+  ],
+  "classes": [
+    "normal",
+    "overheating",
+    "excessive_vibration"
+  ],
+  "test_accuracy": 0.9924242424242424,
+  "confusion_matrix_labels_order": [
+    "normal",
+    "overheating",
+    "excessive_vibration"
+  ],
+  "confusion_matrix": [
+    [
+      437,
+      2,
+      1
+    ],
+    [
+      4,
+      436,
+      0
+    ],
+    [
+      2,
+      1,
+      437
+    ]
+  ],
+  "classification_report": {
+    "normal": {
+      "precision": 0.9864559819413092,
+      "recall": 0.9931818181818182,
+      "f1-score": 0.9898074745186863,
+      "support": 440.0
+    },
+    "overheating": {
+      "precision": 0.9931662870159453,
+      "recall": 0.990909090909091,
+      "f1-score": 0.9920364050056882,
+      "support": 440.0
+    },
+    "excessive_vibration": {
+      "precision": 0.997716894977169,
+      "recall": 0.9931818181818182,
+      "f1-score": 0.9954441913439636,
+      "support": 440.0
+    },
+    "accuracy": 0.9924242424242424,
+    "macro avg": {
+      "precision": 0.9924463879781412,
+      "recall": 0.9924242424242425,
+      "f1-score": 0.9924293569561128,
+      "support": 1320.0
+    },
+    "weighted avg": {
+      "precision": 0.9924463879781411,
+      "recall": 0.9924242424242424,
+      "f1-score": 0.9924293569561127,
+      "support": 1320.0
+    }
+  },
+  "important_warning": "Metrics on synthetic data do not establish accuracy on real industrial equipment. Validate with representative, labeled machine data before operational use."
+}
