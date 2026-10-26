@@ -5,6 +5,7 @@ from typing import Any
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
+from maintenance_tools import search_manual, get_maintenance_history
 
 load_dotenv()
 
@@ -13,25 +14,6 @@ MODEL_NAME = "gemini-3.8-flash"
 
 # Temporary mock tools.
 # Replace their implementations when Member 3's tools are ready.
-
-def mock_search_manual(query: str) -> dict:
-    return {
-        "success": True,
-        "query": query,
-        "source": "mock_motor_manual.txt",
-        "guidance": (
-            "Illustrative guidance: inspect the cooling system "
-            "and consult the approved maintenance procedure."
-        ),
-    }
-
-
-def mock_get_maintenance_history(machine_id: str) -> dict:
-    return {
-        "success": True,
-        "machine_id": machine_id,
-        "history": ["No previous maintenance records in mock data."],
-    }
 
 
 def run_maintenance_agent(
@@ -83,7 +65,7 @@ def run_maintenance_agent(
     tool_results = result["tool_results"]
 
     def search_manual(query: str) -> dict:
-        tool_result = mock_search_manual(query)
+        tool_result = globals()["search_manual"](query)
         tool_results.append({
             "tool": "search_manual",
             "success": tool_result.get("success", False),
@@ -93,7 +75,7 @@ def run_maintenance_agent(
         return tool_result
 
     def get_maintenance_history(machine_id: str) -> dict:
-        tool_result = mock_get_maintenance_history(machine_id)
+        tool_result = globals()["get_maintenance_history"](machine_id)
         tool_results.append({
             "tool": "get_maintenance_history",
             "success": tool_result.get("success", False),
