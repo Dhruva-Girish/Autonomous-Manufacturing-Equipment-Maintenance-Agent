@@ -6,3 +6,5 @@ pytest
 pandas
 scikit-learn
 joblib
+python-dotenvx
+streamlit
